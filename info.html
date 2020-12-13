@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    </head>
+    <body>
+        <div class="navigationBar">
+            <a href="index.html">Startseite</a>
+            <a href="info.html">Info</a>  
+            <a href="abaut.html">Abaut</a>              
+        </div>
+        <div class="mainContainer">
+            <h2>Hier können Sie Information über die Sehenswürdigkeiten anfordern!</h2>
+            <br>
+            <form action="/info.html" id="nachrichtAnfragenForm">
+                <label for="lblName">Name:</label><br>
+                <input id="txtName" type="text"  name="txtName" value="" required><br>
+                <label for="lblEmail">Email:</label><br>
+                <input id="txtEmail" type="text"  name="txtEmail" value="" required><br>
+                <label for="lblNachricht">Nachricht:</label><br>
+                <textarea id="txtNachricht" rows="4" cols="50" name="taNachricht" form="nachrichtAnfragenForm" required></textarea><br><br>
+                <input type="submit" value="Submit" onclick="onClickNachrichtSenden()">
+            </form> 
+        </div>
+    </body>
+</html>
