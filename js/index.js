@@ -216,26 +216,26 @@ function deleteFromFavDataTable(sehenswuerdigkeitElement){
 function onClickNachrichtSenden(){
     let name = document.getElementById("txtName").value;
     if(name != null && name == "" ){
-        //alert("Name wurde nicht richtig eingegeben!");
         HtmlModal.setMessage("Name wurde nicht richtig eingegeben!");
         return false;
     }
     let email = document.getElementById("txtEmail").value;
     if(!validateEmail(email)){
-        alert("Email wurde nicht richtig eingegeben!");
+        HtmlModal.setMessage("Email wurde nicht richtig eingegeben!");
         return false;
     }
     let telefonnummer = document.getElementById("txtTelefonnummer").value;
     if(!isNumeric(telefonnummer)){
-        alert("Telefonnummer wurde nicht richtig eingegeben!");
+        HtmlModal.setMessage("Telefonnummer wurde nicht richtig eingegeben!");
         return false;
     }
     let password = document.getElementById("txtPasswort").value;
     if(password.length < 4){
-        alert("Password wurde nicht richtig eingegeben! Mindestens 4 Zeichen");
+        HtmlModal.setMessage("Password wurde nicht richtig eingegeben! Mindestens 4 Zeichen");
+        return false;
     }
     let nachricht = document.getElementById("txtNachricht").value;
-    alert("Nachricht wurde gesendet: " + "\r\n" 
+    HtmlModal.setMessage("Nachricht wurde gesendet: " + "\r\n" 
         + name + "\r\n" 
         + email +  "\r\n" 
         + nachricht );
