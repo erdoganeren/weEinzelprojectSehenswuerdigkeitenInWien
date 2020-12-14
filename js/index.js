@@ -239,7 +239,7 @@ function onClickNachrichtSenden(){
         + name + "\r\n" 
         + email +  "\r\n" 
         + nachricht );
-    alert("Vielen Dank für Ihre Nachricht!");
+    alert("Die Nachricht wurde erfolgreich gesendet. Vielen Dank für Ihre Nachricht!");
 }
 function validateEmail(email){
     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
