@@ -18,10 +18,26 @@
                 <input id="txtName" type="text"  name="txtName" value="" required><br>
                 <label for="lblEmail">Email:</label><br>
                 <input id="txtEmail" type="text"  name="txtEmail" value="" required><br>
+                
+                <label for="lblTelefonnummer">Telefonnummer:</label><br>
+                <input id="txtTelefonnummer" type="tel"  name="txtTelefonnummer" value="" min="6" max="11" required><br>
+                
+                <label for="lblPasswort">Passwort:</label><br>
+                <input id="txtPasswort" type="password" minlength="4" name="txtPasswort" value="" required><br>
+                
                 <label for="lblNachricht">Nachricht:</label><br>
                 <textarea id="txtNachricht" rows="4" cols="50" name="taNachricht" form="nachrichtAnfragenForm" required></textarea><br><br>
                 <input type="submit" value="Submit" onclick="onClickNachrichtSenden()">
             </form> 
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+              <div class="modal-container">
+                <span onclick="document.getElementById('modal').style.display='none'" class="closeButton">&times;</span>
+                <p id="modalMessage">message</p>
+              </div>
+            </div>
         </div>
     </body>
 </html>

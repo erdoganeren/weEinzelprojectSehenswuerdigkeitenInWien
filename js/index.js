@@ -211,14 +211,54 @@ function deleteFromFavDataTable(sehenswuerdigkeitElement){
 }
 
 /**
- * Form
+ * Form validation
  */
 function onClickNachrichtSenden(){
     let name = document.getElementById("txtName").value;
+    if(name != null && name == "" ){
+        //alert("Name wurde nicht richtig eingegeben!");
+        HtmlModal.setMessage("Name wurde nicht richtig eingegeben!");
+        return false;
+    }
     let email = document.getElementById("txtEmail").value;
+    if(!validateEmail(email)){
+        alert("Email wurde nicht richtig eingegeben!");
+        return false;
+    }
+    let telefonnummer = document.getElementById("txtTelefonnummer").value;
+    if(!isNumeric(telefonnummer)){
+        alert("Telefonnummer wurde nicht richtig eingegeben!");
+        return false;
+    }
+    let password = document.getElementById("txtPasswort").value;
+    if(password.length < 4){
+        alert("Password wurde nicht richtig eingegeben! Mindestens 4 Zeichen");
+    }
     let nachricht = document.getElementById("txtNachricht").value;
     alert("Nachricht wurde gesendet: " + "\r\n" 
         + name + "\r\n" 
         + email +  "\r\n" 
         + nachricht );
+}
+function validateEmail(email){
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
+        return true;
+    }
+    return false;
+}
+function isNumeric(telefonnummer){
+    if(/^[0-9]+$/.test(telefonnummer)){
+      return true;
+    }
+    return false;
+}
+
+class HtmlModal{
+    constructor(){}
+
+    static setMessage(message){
+        let modalMessage = document.getElementById("modalMessage");
+        modalMessage.innerHTML = message; 
+        document.getElementById("modal").style.display = "block";      
+    }
 }
