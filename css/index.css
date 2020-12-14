@@ -46,6 +46,29 @@ body {
 /*
   Icon
 */
+@media only screen and (max-width: 360px) {
+  .iconHeart{
+    background: url('../images/Ico/heart.svg');
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    display: block;
+   }
+  
+  .iconDelete{
+    background: url('../images/Ico/delete.svg');
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    display: block;
+   }
+  
+  .stadtwienlogo{
+    float: right;
+    height: 70px;
+  }
+}
+
 .iconHeart{
   background: url('../images/Ico/heart.svg');
   background-repeat: no-repeat;
