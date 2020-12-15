@@ -134,7 +134,7 @@ body {
 	top: 0;
 }
 
-.txtSwSuche{
+#txtSwSuche{
   width: 40%;
   height: 20px;
   font-size: 14px;
