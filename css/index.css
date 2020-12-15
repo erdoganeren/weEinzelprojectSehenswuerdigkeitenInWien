@@ -133,3 +133,9 @@ body {
 	right: 0;
 	top: 0;
 }
+
+.txtSwSuche{
+  width: 40%;
+  height: 20px;
+  font-size: 14px;
+}

@@ -9,11 +9,16 @@
         <div class="navigationBar">
             <a href="index.html">Startseite</a>
             <a href="info.html">Info</a> 
-            <a href="about.html">Abaut</a>               
+            <a href="about.html">About</a>               
         </div>
         <div class="mainContainer">
             <img class="stadtwienlogo" src="images/jpg/Stadt-Wien-Logo.jpg" alt="Stadt-Wien-Logo">
             <h1>Willkommen in der Sehenswürdigkeitenliste von Wien</h1>
+            <div onchange="startSuche()">
+                Suche:
+                <input id="txtSwSuche" type="text"  name="txtName" onkeydown="Suche.start()" placeholder="Sehenswürdigkeit"><br>               
+            </div>
+
             <div class="tableContainer">
                 <h3>Sehenswürdigkeitenliste</h3>
                 <table id="dataTable"></table>

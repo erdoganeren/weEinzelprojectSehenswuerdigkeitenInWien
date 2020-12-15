@@ -123,7 +123,7 @@ class HtmlTableGenerator{
 
     static async  generateTable(htmlTableId,sehenswuerdigkeiten){
         let table = document.getElementById(htmlTableId);
-        if (tableEnum.favDataTableId == htmlTableId)
+        //if (tableEnum.favDataTableId == htmlTableId)
             this.clearTable(table);
         this.addThToTablel(table);
 
@@ -241,6 +241,19 @@ function onClickNachrichtSenden(){
         + nachricht );
     alert("Die Nachricht wurde erfolgreich gesendet. Vielen Dank für Ihre Nachricht!");
 }
+class HtmlModal{
+    constructor(){}
+
+    static setMessage(message){
+        let modalMessage = document.getElementById("modalMessage");
+        modalMessage.innerHTML = message; 
+        document.getElementById("modal").style.display = "block";      
+    }
+}
+
+/**
+ * Hilfs Funktionen
+ */
 function validateEmail(email){
     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
         return true;
@@ -254,12 +267,25 @@ function isNumeric(telefonnummer){
     return false;
 }
 
-class HtmlModal{
+function startSuche(){
+    
+}
+function like(sw){
+   return sw.name.toLowerCase().startsWith(document.getElementById("txtSwSuche").value.toLowerCase());
+}
+
+class Suche{
     constructor(){}
 
-    static setMessage(message){
-        let modalMessage = document.getElementById("modalMessage");
-        modalMessage.innerHTML = message; 
-        document.getElementById("modal").style.display = "block";      
+    static start(){
+        let searchResultDatatable = dataTable.sehenswuerdigkeiten.filter(sw => like(sw))
+        HtmlTableGenerator.generateTable("dataTable",searchResultDatatable);
     }
+    static like(sw){
+        let sucheValue = document.getElementById("txtSwSuche").value.toLowerCase();
+        return sw.name.toLowerCase().startsWith(sucheValue);
+     }
 }
+
+
+
